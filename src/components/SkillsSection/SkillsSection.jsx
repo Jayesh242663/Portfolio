@@ -1,3 +1,4 @@
+import { SiUdemy } from 'react-icons/si'
 import './SkillsSection.css'
 
 function SkillsSection() {
@@ -20,7 +21,6 @@ function SkillsSection() {
         { name: 'Python', iconClass: 'devicon-python-plain colored', level: 'ADVANCED' },
         { name: 'Flask', iconClass: 'devicon-flask-original colored', level: 'INTERMEDIATE' },
         { name: 'Java', iconClass: 'devicon-java-plain colored', level: 'INTERMEDIATE' },
-        { name: 'C', iconClass: 'devicon-c-plain colored', level: 'INTERMEDIATE' },
       ],
     },
     {
@@ -53,7 +53,7 @@ function SkillsSection() {
       <div
         className="skills-heading flex items-center justify-between"
         style={{
-          marginBottom: '32px',
+          marginBottom: '8px',
           flexShrink: 0,
         }}
       >
@@ -64,7 +64,7 @@ function SkillsSection() {
             fontWeight: 700,
           }}
         >
-          /SKILLS
+          /SKILLS & CERTIFICATIONS
         </h2>
 
         <span className="text-label-sm text-on-surface-variant opacity-50 font-code-snippet uppercase">
@@ -111,7 +111,37 @@ function SkillsSection() {
           </div>
         ))}
       </div>
-    </section>
+
+      {/* Certificates Subsection */}
+
+      <div className="certificates-grid">
+        <a
+          href="https://www.udemy.com/certificate/UC-a7425637-c8a8-4839-b725-ae08543fd1e1/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="certificate-card brutalist-border"
+        >
+          <div className="cert-info">
+            <SiUdemy className="cert-icon" />
+            <span className="cert-name">100 Days of Code™: The Complete Python Pro Bootcamp</span>
+          </div>
+          <span className="cert-verify">[ VERIFY ]</span>
+        </a>
+
+        <a
+          href="https://www.udemy.com/certificate/UC-21e0129e-be9a-48aa-a4d0-5db42fa53c0a/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="certificate-card brutalist-border"
+        >
+          <div className="cert-info">
+            <SiUdemy className="cert-icon" />
+            <span className="cert-name">The Complete Full-Stack Web Development Bootcamp</span>
+          </div>
+          <span className="cert-verify">[ VERIFY ]</span>
+        </a>
+      </div>
+    </section >
   )
 }
 
