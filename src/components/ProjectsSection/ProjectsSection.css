@@ -1,0 +1,224 @@
+.projects-layout {
+  display: grid;
+  grid-template-columns: minmax(220px, 25%) minmax(0, 1fr);
+  border: 1px solid var(--border);
+  height: auto;
+  min-height: 0;
+}
+
+.project-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-width: 0;
+  align-self: stretch;
+  border-right: 1px solid var(--border);
+  background: rgba(19, 19, 19, 0.35);
+  overflow: visible;
+  align-items: stretch;
+}
+
+.project-nav-item {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  flex-shrink: 0;
+  cursor: pointer;
+  width: 100%;
+  min-width: 0;
+  padding: 22px 24px;
+  position: relative;
+}
+
+.project-nav-item:last-child {
+  border-bottom: none;
+}
+
+.project-nav-item:hover {
+  background: rgba(0, 255, 136, 0.04);
+}
+
+.project-nav-item.active {
+  background: rgba(0, 255, 136, 0.08);
+}
+
+.project-nav-item.active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: var(--green);
+}
+
+.project-nav-id {
+  flex: 0 0 42px;
+  min-width: 44px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  opacity: 0.8;
+}
+
+.project-nav-title {
+  flex: 1;
+  min-width: 0;
+  font-family: 'Space Mono', monospace;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.project-nav-item.active .project-nav-title {
+  color: var(--green);
+}
+
+.project-detail {
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  animation: projectFade 0.25s ease;
+  overflow: visible;
+}
+
+.project-status {
+  font-size: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--green);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.project-detail-title {
+  font-family: 'Space Mono', monospace;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 10px;
+}
+
+.project-detail-type {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.55;
+  margin-bottom: 24px;
+}
+
+.project-detail-description {
+  max-width: 720px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #b9cbb9;
+  margin-bottom: 32px;
+}
+
+.project-footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+.project-tech-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.project-tech-icon {
+  font-size: 42px;
+  transition:
+    transform 0.2s ease,
+    filter 0.2s ease;
+}
+
+.project-tech-icon:hover {
+  transform: translateY(-4px) scale(1.08);
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.15));
+}
+
+.tech-tooltip-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tech-tooltip {
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f0f0f;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 4px 10px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  pointer-events: none;
+  z-index: 100;
+}
+
+.tech-tooltip-wrapper:hover .tech-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-actions {
+  display: flex;
+  gap: 12px;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+.project-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 18px;
+  border: 1px solid var(--border);
+  text-decoration: none;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.project-action-btn:hover {
+  background: var(--green);
+  color: #003919;
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+
+.project-action-btn .material-symbols-outlined {
+  font-size: 16px;
+}
+
+@keyframes projectFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

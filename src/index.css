@@ -1,0 +1,160 @@
+/* =============================================
+   JAYESH_CHANNE.SYS — Global Styles
+   Only truly global / reset rules live here.
+   Component-specific styles → App.css
+   ============================================= */
+@import "tailwindcss";
+
+/* =============================================
+   TAILWIND V4 THEME — migrated from CDN config
+   All custom design tokens live here as CSS vars.
+   ============================================= */
+@theme {
+  /* ── Colors ── */
+  --color-primary:                  #f1ffef;
+  --color-on-primary:               #003919;
+  --color-primary-container:        #00ff88;
+  --color-on-primary-container:     #007139;
+  --color-primary-fixed:            #60ff99;
+  --color-primary-fixed-dim:        #00e479;
+  --color-on-primary-fixed:         #00210c;
+  --color-on-primary-fixed-variant: #005228;
+
+  --color-secondary:                #c7c7bf;
+  --color-on-secondary:             #2f312c;
+  --color-secondary-container:      #484a44;
+  --color-on-secondary-container:   #b8b9b1;
+  --color-secondary-fixed:          #e3e3db;
+  --color-secondary-fixed-dim:      #c7c7bf;
+  --color-on-secondary-fixed:       #1a1c17;
+  --color-on-secondary-fixed-variant: #464742;
+
+  --color-tertiary:                 #fffaf7;
+  --color-on-tertiary:              #3d2f00;
+  --color-tertiary-container:       #ffdb79;
+  --color-on-tertiary-container:    #795f01;
+  --color-tertiary-fixed:           #ffe08d;
+  --color-tertiary-fixed-dim:       #e5c364;
+  --color-on-tertiary-fixed:        #241a00;
+  --color-on-tertiary-fixed-variant: #584400;
+
+  --color-error:                    #ffb4ab;
+  --color-on-error:                 #690005;
+  --color-error-container:          #93000a;
+  --color-on-error-container:       #ffdad6;
+
+  --color-background:               #0A0A0A;
+  --color-on-background:            #e4e2e1;
+
+  --color-surface:                  #131313;
+  --color-surface-dim:              #131313;
+  --color-surface-bright:           #393939;
+  --color-surface-tint:             #00e479;
+  --color-surface-variant:          #353535;
+  --color-surface-container:        #1f2020;
+  --color-surface-container-low:    #1b1c1c;
+  --color-surface-container-high:   #2a2a2a;
+  --color-surface-container-highest: #353535;
+  --color-surface-container-lowest: #0e0e0e;
+
+  --color-on-surface:               #E8E8E0;
+  --color-on-surface-variant:       #b9cbb9;
+
+  --color-outline:                  #849585;
+  --color-outline-variant:          #333333;
+
+  --color-inverse-surface:          #e4e2e1;
+  --color-inverse-on-surface:       #303030;
+  --color-inverse-primary:          #006d37;
+
+  /* ── Border radius — brutalist (all 0) ── */
+  --radius:     0px;
+  --radius-sm:  0px;
+  --radius-md:  0px;
+  --radius-lg:  0px;
+  --radius-xl:  0px;
+  --radius-full: 0px;
+
+  /* ── Spacing extras ── */
+  --spacing-base:          4px;
+  --spacing-xs:            8px;
+  --spacing-sm:            16px;
+  --spacing-gutter:        24px;
+  --spacing-md:            32px;
+  --spacing-lg:            64px;
+  --spacing-xl:            128px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 40px;
+
+  /* ── Font families ── */
+  --font-body-lg:           "JetBrains Mono", monospace;
+  --font-body-md:           "JetBrains Mono", monospace;
+  --font-code-snippet:      "JetBrains Mono", monospace;
+  --font-label-sm:          "JetBrains Mono", monospace;
+  --font-display-lg:        "Space Mono", monospace;
+  --font-headline-md:       "Space Mono", monospace;
+  --font-display-lg-mobile: "Space Mono", monospace;
+
+  /* ── Breakpoints ── */
+  --breakpoint-sm:  640px;
+  --breakpoint-md:  768px;
+  --breakpoint-lg:  1024px;
+  --breakpoint-xl:  1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --green: #00ff88;
+  --green-dim: #00e479;
+  --bg: #0A0A0A;
+  --surface: #131313;
+  --border: #333333;
+  --text: #E8E8E0;
+}
+
+html {
+  /* smooth only for anchor links — scroll-snap removed */
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'JetBrains Mono', monospace;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #222;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--green);
+}
+
+/* ─── Selection ─── */
+::selection {
+  background: rgba(0, 255, 136, 0.22);
+  color: #f1ffef;
+}

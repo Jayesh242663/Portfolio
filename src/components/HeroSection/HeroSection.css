@@ -1,0 +1,147 @@
+@keyframes heroUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.portfolio-visible .hero-tag {
+  animation: heroUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.10s both;
+}
+
+.portfolio-visible .hero-name {
+  animation: heroUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.20s both;
+}
+
+.portfolio-visible .hero-sub {
+  animation: heroUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.36s both;
+}
+
+.portfolio-visible .hero-meta {
+  animation: heroUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.50s both;
+}
+
+.portfolio-visible .hero-scroll {
+  animation: heroUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) 0.65s both;
+}
+
+.portfolio-visible .hero-portrait {
+  animation: heroRight 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.28s both;
+}
+
+@keyframes glitch-clip {
+  0% {
+    clip-path: inset(0 0 98% 0);
+    transform: translateX(-2px);
+  }
+
+  25% {
+    clip-path: inset(40% 0 50% 0);
+    transform: translateX(2px);
+  }
+
+  50% {
+    clip-path: inset(70% 0 20% 0);
+    transform: translateX(-1px);
+  }
+
+  75% {
+    clip-path: inset(20% 0 60% 0);
+    transform: translateX(1px);
+  }
+
+  100% {
+    clip-path: inset(100% 0 0 0);
+    transform: translateX(0);
+  }
+}
+
+.glitch-text {
+  position: relative;
+}
+
+.glitch-text::before,
+.glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.glitch-text:hover::before {
+  opacity: 0.7;
+  color: var(--green);
+  animation: glitch-clip 0.4s steps(2) infinite;
+}
+
+.glitch-text:hover::after {
+  opacity: 0.5;
+  color: #ff0055;
+  animation: glitch-clip 0.4s steps(2) infinite reverse;
+}
+
+@keyframes bounce-custom {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.bounce-custom {
+  animation: bounce-custom 1.6s ease-in-out infinite;
+}
+
+.hero-portrait {
+  position: absolute;
+  z-index: 20;
+  opacity: 0.8;
+}
+
+.portrait-socials {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 8px;
+  margin-left: 6px;
+}
+
+.portrait-socials a {
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+}
+
+.portrait-socials a:hover {
+  transform: translateY(-2px);
+}
+
+.portrait-socials i {
+  font-size: 20px;
+}

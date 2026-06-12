@@ -1,0 +1,94 @@
+/* =============================================
+   APP.CSS — Global / Shared Styles
+   ============================================= */
+
+/* ─────────────────────────────────────────────
+   SHARED LAYOUT TOKEN & GLOBALS
+   ───────────────────────────────────────────── */
+:root {
+  --section-px: clamp(20px, 5vw, 72px);
+  --section-pt: 68px;
+  /* clears fixed header (62px) */
+  --section-pb: 50px;
+  /* clears fixed footer (44px) */
+}
+
+.brutalist-border {
+  border: 1px solid var(--border);
+}
+
+.dither {
+  background-image: repeating-linear-gradient(45deg,
+      transparent,
+      transparent 1px,
+      rgba(51, 51, 51, 0.1) 1px,
+      rgba(51, 51, 51, 0.1) 2px);
+}
+
+.hover-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 24px rgba(0, 255, 136, 0.1);
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+/* ─────────────────────────────────────────────
+   INVERT UI
+   ───────────────────────────────────────────── */
+.inverted-ui {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+.inverted-ui .portrait-protected {
+  filter: grayscale(1) contrast(1.5) brightness(0.75) invert(1) hue-rotate(180deg) !important;
+}
+
+/* ─────────────────────────────────────────────
+   PORTFOLIO ROOT FADE-IN
+   ───────────────────────────────────────────── */
+.portfolio-root {
+  opacity: 0;
+  transition: opacity 0.55s ease 0.05s;
+}
+
+.portfolio-root.portfolio-visible {
+  opacity: 1;
+}
+
+/* ─────────────────────────────────────────────
+   SECTION WRAPPER
+   ───────────────────────────────────────────── */
+.section-wrap {
+  min-height: 100svh;
+  height: auto;
+  padding: var(--section-pt) var(--section-px) var(--section-pb);
+  display: flex;
+  flex-direction: column;
+}
+
+#skills.section-wrap,
+#contact.section-wrap {
+  justify-content: center;
+}

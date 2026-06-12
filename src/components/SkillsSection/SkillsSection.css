@@ -1,0 +1,87 @@
+.skills-columns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: start;
+  min-height: 0;
+}
+
+.skill-column {
+  position: relative;
+  padding: 0 32px;
+}
+
+.skill-column-title {
+  font-family: 'Space Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--green);
+  margin-bottom: 32px;
+}
+
+.skill-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+}
+
+/* Vertical divider */
+.skill-column:not(:last-child) .skill-icons::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -32px;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(to bottom,
+      transparent,
+      var(--border),
+      transparent);
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+  position: relative;
+}
+
+.skill-item:hover {
+  opacity: 1;
+}
+
+.skill-item-level {
+  margin-left: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  color: var(--green);
+  opacity: 0.55;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.skill-item:hover .skill-item-level {
+  opacity: 0.95;
+}
+
+.skill-item-icon {
+  width: 36px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 32px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.skill-item-name {
+  font-size: 16px;
+  line-height: 1.5;
+  font-weight: 500;
+  color: var(--text);
+}

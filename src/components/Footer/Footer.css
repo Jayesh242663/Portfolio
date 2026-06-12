@@ -1,0 +1,9 @@
+@media (max-width: 768px) {
+  footer {
+    padding: 8px 16px !important;
+  }
+
+  footer .font-code-snippet {
+    font-size: 10px !important;
+  }
+}
