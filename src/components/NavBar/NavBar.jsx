@@ -17,12 +17,12 @@ function NavBar() {
         JAYESH_CHANNE
       </div>
 
-      {/* CV button */}
+      {/* CV button (hidden on mobile, shown inside drawer instead) */}
       <a
         href="https://drive.google.com/file/d/1e6K54SYc_iL3-FyQHZFm5kujjVu5QT8O/view"
         target="_blank"
         rel="noopener noreferrer"
-        className="cv-button font-label-sm uppercase brutalist-border hover:bg-primary-container hover:text-on-primary-container transition-all"
+        className="cv-button cv-button-desktop font-label-sm uppercase brutalist-border hover:bg-primary-container hover:text-on-primary-container transition-all"
         style={{ padding: '8px 16px', fontSize: '11px', letterSpacing: '0.08em' }}
       >
         Resume
@@ -57,9 +57,19 @@ function NavBar() {
                 {item}
               </a>
             ))}
+            <a
+              href="https://drive.google.com/file/d/1e6K54SYc_iL3-FyQHZFm5kujjVu5QT8O/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mobile-nav-link"
+              style={{ border: '1px solid var(--green)', marginTop: '8px', color: 'var(--green)', fontWeight: 700 }}
+              onClick={() => setMobileOpen(false)}
+            >
+              RESUME / CV
+            </a>
             <button
               className="mobile-nav-link"
-              style={{ border: '1px solid var(--green)', marginTop: '8px', textAlign: 'left' }}
+              style={{ border: '1px solid var(--border)', marginTop: '8px', textAlign: 'left' }}
               onClick={() => { toggleInvert(); setMobileOpen(false) }}
             >
               INVERT_UI

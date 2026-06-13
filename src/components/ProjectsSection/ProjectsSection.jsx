@@ -246,6 +246,67 @@ function ProjectsSection() {
           </div>
         </div>
       </div>
+
+      {/* MOBILE — sliding project cards */}
+      <div className="projects-mobile-cards">
+        {projects.map((project) => (
+          <div key={project.id} className="project-mobile-card">
+            <div className="project-status">
+              STATUS: {project.status}
+            </div>
+
+            <div className="project-nav-id" style={{ marginBottom: '6px' }}>
+              [{project.id}]
+            </div>
+
+            <h3 className="project-detail-title">
+              {project.title}
+            </h3>
+
+            <div className="project-detail-type">
+              {project.type}
+            </div>
+
+            <p className="project-detail-description">
+              {project.description}
+            </p>
+
+            <div className="project-footer-row" style={{ flexDirection: 'column', alignItems: 'flex-start', gap: '16px' }}>
+              <div className="project-tech-icons">
+                {project.technologies.map((tech) => (
+                  <div key={tech.name} className="tech-tooltip-wrapper">
+                    <i className={`${tech.icon} project-tech-icon`} />
+                    <span className="tech-tooltip">{tech.name}</span>
+                  </div>
+                ))}
+              </div>
+
+              <div className="project-actions" style={{ marginLeft: 0 }}>
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-action-btn"
+                >
+                  <span className="material-symbols-outlined">code</span>
+                  GITHUB
+                </a>
+
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project-action-btn"
+                >
+                  <span className="material-symbols-outlined">open_in_new</span>
+                  LIVE DEMO
+                </a>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="projects-mobile-hint">← SWIPE →</div>
     </section>
   )
 }

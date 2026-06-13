@@ -222,3 +222,70 @@
     transform: translateY(0);
   }
 }
+
+/* =============================================
+   MOBILE — sliding project cards
+   ============================================= */
+.projects-mobile-cards {
+  display: none;
+}
+
+.projects-mobile-hint {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  /* hide desktop sidebar+detail layout */
+  .projects-layout {
+    display: none;
+  }
+
+  .projects-mobile-cards {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 16px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+    margin: 0 calc(-1 * var(--section-px));
+    padding-left: var(--section-px);
+    padding-right: var(--section-px);
+  }
+
+  .projects-mobile-cards::-webkit-scrollbar {
+    height: 3px;
+  }
+
+  .project-mobile-card {
+    flex: 0 0 88%;
+    max-width: 420px;
+    scroll-snap-align: center;
+    border: 1px solid var(--border);
+    background: rgba(19, 19, 19, 0.35);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .project-mobile-card .project-detail-title {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .project-mobile-card .project-detail-description {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 24px;
+  }
+
+  .projects-mobile-hint {
+    display: block;
+    text-align: center;
+    margin-top: 14px;
+    font-size: 11px;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    opacity: 0.6;
+  }
+}

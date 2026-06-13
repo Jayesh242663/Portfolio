@@ -67,7 +67,7 @@ function SkillsSection() {
           /SKILLS & CERTIFICATIONS
         </h2>
 
-        <span className="text-label-sm text-on-surface-variant opacity-50 font-code-snippet uppercase">
+        <span className="text-label-sm text-on-surface-variant opacity-50 font-code-snippet uppercase" style={{ whiteSpace: 'nowrap', flexShrink: 0 }}>
           [ SECTION_04 ]
         </span>
       </div>

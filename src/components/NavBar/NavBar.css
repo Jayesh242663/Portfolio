@@ -28,6 +28,10 @@
   .mobile-menu-toggle {
     display: flex;
   }
+
+  .cv-button-desktop {
+    display: none;
+  }
 }
 
 .mobile-nav-backdrop {
